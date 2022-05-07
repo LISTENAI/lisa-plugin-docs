@@ -1,0 +1,48 @@
+{
+  "name": "@lisa-plugin/docs",
+  "version": "1.0.0",
+  "description": "Lisa Plugin for LSDocs",
+  "main": "./lib/main.js",
+  "lisa": {
+    "friendlyName": "docs",
+    "taskPath": "./lib/tasks"
+  },
+  "engines": {
+    "node": ">=14",
+    "git": ">=2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p .",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LISTENAI/lisa-plugin-docs.git"
+  },
+  "author": "LISTENAI",
+  "maintainers": [
+    "lpmadmin <lpm.admin@listenai.com>",
+    "zbzhao <zbzhao@listenai.com>"
+  ],
+  "files": [
+    "lib"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LISTENAI/lisa-plugin-docs/issues"
+  },
+  "homepage": "https://github.com/LISTENAI/lisa-plugin-docs#readme",
+  "dependencies": {
+    "@listenai/lisa_core": "^2.1.3",
+    "chokidar": "^3.5.3",
+    "ini": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/ini": "^1.3.31",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^16.11.1",
+    "typescript": "^4.6.2"
+  }
+}

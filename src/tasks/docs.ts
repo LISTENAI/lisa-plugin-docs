@@ -1,5 +1,5 @@
 import Lisa from '@listenai/lisa_core';
-import { join, relative } from 'path';
+import { join, relative, basename } from 'path';
 import { homedir } from 'os';
 import { readJSON, pathExists, writeJSON, mkdirp, readFile, copy } from 'fs-extra';
 import { parse } from 'ini';
@@ -98,7 +98,7 @@ export default ({ application, cmd, job }: typeof Lisa) => {
       }
       for (let key in gitmodules) {
         const gitmodule = gitmodules[key];
-        if (targetModule.indexOf(gitmodule.url) >= 0) {
+        if (targetModule.indexOf(basename(gitmodule.url)) >= 0) {
           targetPath = join(LsDocsPath, gitmodule.path)
         }
       }

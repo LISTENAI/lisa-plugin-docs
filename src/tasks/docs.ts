@@ -53,7 +53,7 @@ export default ({ application, cmd, job }: typeof Lisa) => {
       }
 
       await cmd('git', ['checkout', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
-      await cmd('git', ['fetch', 'origin', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
+      await cmd('git', ['pull', 'origin', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
 
       await cmd('git', ['submodule', 'update', '--init', '--recursive'], { cwd: LsDocsPath, stdio: 'inherit' });
 
@@ -80,7 +80,6 @@ export default ({ application, cmd, job }: typeof Lisa) => {
       }
 
       await cmd('git', ['checkout', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
-      await cmd('git', ['fetch', 'origin', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
       await cmd('git', ['pull', 'origin', 'master'], { cwd: LsDocsPath, stdio: 'inherit' });
       await cmd('git', ['submodule', 'foreach', '--recursive', 'git', 'reset', '--hard'], { cwd: LsDocsPath, stdio: 'inherit' }) 
 
